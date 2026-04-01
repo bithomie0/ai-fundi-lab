@@ -1,0 +1,27 @@
+{
+  "name": "The AI Fundi",
+  "short_name": "AI Fundi",
+  "description": "AI Skills Made Simple. Learn to use AI the practical way.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#482d55",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

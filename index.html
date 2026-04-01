@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ═══════════════════════════════════════════
+         PRIMARY META
+    ═══════════════════════════════════════════ -->
+    <title>The AI Fundi — AI Skills Made Simple</title>
+    <meta name="description" content="AI Skills Made Simple. The AI Fundi Lab helps AI-curious professionals learn to use AI the practical way. Multiply output. Cut costs. Do more with less." />
+    <link rel="canonical" href="https://theaifundi.com" />
+
+    <!-- ═══════════════════════════════════════════
+         FAVICONS & APP ICONS
+         PNG files (favicon.ico, apple-touch-icon.png, icon-192.png,
+         icon-512.png, icon-maskable.png) must be generated from
+         /public/logo.svg before deploying. Use a tool such as:
+           npx @squoosh/cli or https://realfavicongenerator.net
+    ═══════════════════════════════════════════ -->
+    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- ═══════════════════════════════════════════
+         PWA / ANDROID
+    ═══════════════════════════════════════════ -->
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#482d55" />
+
+    <!-- ═══════════════════════════════════════════
+         APPLE WEB APP
+    ═══════════════════════════════════════════ -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="The AI Fundi" />
+
+    <!-- ═══════════════════════════════════════════
+         OPEN GRAPH
+         NOTE: og:image references og-image.png — convert og-image.svg
+         to a 1200×630 PNG before deploying for best social share
+         compatibility. Open the SVG in a browser, screenshot at 1200×630,
+         or run: npx svgexport public/og-image.svg public/og-image.png 1200:630
+    ═══════════════════════════════════════════ -->
+    <meta property="og:title" content="The AI Fundi — AI Skills Made Simple" />
+    <meta property="og:description" content="Learn to use AI the practical way. Websites, apps, workflows, and AI systems — built for professionals who want to do more with less." />
+    <meta property="og:image" content="https://theaifundi.com/og-image.png" />
+    <meta property="og:url" content="https://theaifundi.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="The AI Fundi" />
+
+    <!-- ═══════════════════════════════════════════
+         TWITTER / X
+    ═══════════════════════════════════════════ -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The AI Fundi — AI Skills Made Simple" />
+    <meta name="twitter:description" content="Learn to use AI the practical way. Websites, apps, workflows, and AI systems — built for professionals who want to do more with less." />
+    <meta name="twitter:image" content="https://theaifundi.com/og-image.png" />
+    <meta name="twitter:site" content="@theaifundi" />
+
+    <!-- ═══════════════════════════════════════════
+         GOOGLE FONTS (preconnect for performance)
+    ═══════════════════════════════════════════ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — Person
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Chris Conley",
+      "alternateName": "The AI Fundi",
+      "jobTitle": "AI Consultant & Builder",
+      "description": "Chris Conley is The AI Fundi — helping AI-curious professionals and businesses use AI to multiply output, cut costs, and do more with less. 18+ years of global corporate business experience spanning engineering, sales, strategy, and AI.",
+      "url": "https://theaifundi.com",
+      "knowsAbout": ["Artificial Intelligence", "AI Automation", "AI Workflows", "Website Development", "Business Strategy", "Small Business AI", "AI Consulting", "AI Audits"],
+      "sameAs": []
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — Organization
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The AI Fundi",
+      "url": "https://theaifundi.com",
+      "logo": "https://theaifundi.com/logo.svg",
+      "description": "The AI Fundi helps AI-curious professionals and businesses learn to use AI the practical way. Services include AI-powered websites, AI workflows and automations, and AI audits.",
+      "founder": {"@type": "Person", "name": "Chris Conley"},
+      "areaServed": "Worldwide",
+      "knowsAbout": ["Artificial Intelligence", "AI Automation", "AI for Small Business", "AI Consulting"]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — Services
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI-Powered Websites",
+        "provider": {"@type": "Organization", "name": "The AI Fundi"},
+        "description": "Professional websites built using AI tools — fast, affordable, and built to convert.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Workflows & Automations",
+        "provider": {"@type": "Organization", "name": "The AI Fundi"},
+        "description": "Custom AI systems for businesses — from content engines to internal tools — tailored to how teams actually work.",
+        "areaServed": "Worldwide"
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "serviceType": "AI Audits",
+        "provider": {"@type": "Organization", "name": "The AI Fundi"},
+        "description": "A walkthrough of your business to identify where AI saves the most time and money, with a clear action plan.",
+        "areaServed": "Worldwide"
+      }
+    ]
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         STRUCTURED DATA — FAQ
+    ═══════════════════════════════════════════ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is The AI Fundi Lab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI Fundi Lab is a paid community on Skool where AI-curious professionals learn to use AI the practical way. Members get step-by-step builds, weekly live sessions, direct support, templates, and a community of people doing the same thing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is The AI Fundi for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI Fundi Lab is for professionals, small business owners, nonprofit leaders, and anyone who is AI-curious and wants to learn how to use AI tools practically — without needing a technical background."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What services does The AI Fundi offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The AI Fundi offers three done-for-you services: AI-Powered Websites (professional sites built with AI tools), AI Workflows & Automations (custom AI systems tailored to your business), and AI Audits (a review of your business to identify where AI can save time and money)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who is Chris Conley?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Chris Conley is The AI Fundi — an AI consultant and builder with 18+ years of global corporate business experience spanning engineering, sales, strategy, and AI. He helps professionals and businesses use AI to multiply output, cut costs, and do more with less."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I book a call with The AI Fundi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can book a free 15-minute intro call at cal.com/theaifundi/intro. No pitch, no pressure — just an honest conversation about where AI can help your business."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- ═══════════════════════════════════════════
+         GOOGLE ANALYTICS
+         To enable: replace REPLACE_WITH_YOUR_GA_ID with your
+         Measurement ID (e.g. G-XXXXXXXXXX) and uncomment both script tags.
+    ═══════════════════════════════════════════ -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=REPLACE_WITH_YOUR_GA_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'REPLACE_WITH_YOUR_GA_ID');
+    </script>
+    -->
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

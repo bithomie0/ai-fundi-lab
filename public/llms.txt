@@ -1,0 +1,22 @@
+# The AI Fundi
+
+## About
+The AI Fundi is a brand founded by Chris Conley that helps AI-curious professionals and businesses learn to use AI the practical way. The AI Fundi offers education through The AI Fundi Lab (a paid community on Skool) and done-for-you services including AI-powered websites, AI workflows and automations, and AI audits.
+
+## Founder
+Chris Conley is The AI Fundi. He brings 18+ years of global corporate business experience spanning engineering, sales, strategy, and AI. He helps small businesses, nonprofits, and professionals multiply output, cut costs, and do more with less using practical AI.
+
+## Services
+- AI-Powered Websites: Professional websites built using AI tools — fast, affordable, and built to convert.
+- AI Workflows & Automations: Custom AI systems for businesses — from content engines to internal tools — tailored to how teams actually work.
+- AI Audits: A walkthrough of your business to identify where AI saves the most time and money, with a clear action plan.
+
+## Community
+The AI Fundi Lab is a paid Skool community where AI-curious professionals learn to use AI with step-by-step builds, weekly live sessions, direct support, and ready-to-use templates.
+
+## Location
+Based in Amsterdam, Netherlands. Serving clients globally.
+
+## Contact
+Website: https://theaifundi.com
+Booking: https://cal.com/theaifundi/intro

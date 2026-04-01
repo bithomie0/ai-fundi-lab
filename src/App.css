@@ -1,0 +1,4 @@
+/* Layout is managed entirely by the App component — reset Vite's default root constraints */
+#root {
+  min-height: 100vh;
+}

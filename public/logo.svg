@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 360" fill="#482d55" role="img" aria-label="The AI Fundi logo">
+  <!-- Letter A: two diagonal legs + crossbar -->
+  <polygon points="110,18 140,18 72,343 10,343"/>
+  <polygon points="140,18 168,18 265,343 183,343"/>
+  <rect x="53" y="205" width="171" height="35"/>
+  <!-- Letter F: vertical bar + top bar + middle bar -->
+  <rect x="275" y="18" width="50" height="325"/>
+  <rect x="275" y="18" width="200" height="50"/>
+  <rect x="275" y="148" width="183" height="40"/>
+</svg>

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#482d55"/>
+
+  <!-- Subtle noise texture -->
+  <filter id="noise">
+    <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComposite in2="SourceGraphic" operator="in"/>
+  </filter>
+  <rect width="1200" height="630" fill="white" filter="url(#noise)" opacity="0.04"/>
+
+  <!-- Subtle radial glow -->
+  <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+    <stop offset="0%" stop-color="#7b4fa0" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#482d55" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- AF Logo (white, centered, scale 0.55 of 520x360 logo = 286x198) -->
+  <!-- Centered: x offset = (1200-286)/2 = 457, y offset = 80 -->
+  <g transform="translate(457, 80) scale(0.55)" fill="white" opacity="0.95">
+    <!-- Letter A -->
+    <polygon points="110,18 140,18 72,343 10,343"/>
+    <polygon points="140,18 168,18 265,343 183,343"/>
+    <rect x="53" y="205" width="171" height="35"/>
+    <!-- Letter F -->
+    <rect x="275" y="18" width="50" height="325"/>
+    <rect x="275" y="18" width="200" height="50"/>
+    <rect x="275" y="148" width="183" height="40"/>
+  </g>
+
+  <!-- Tagline -->
+  <text
+    x="600"
+    y="380"
+    font-family="'Helvetica Neue', Arial, sans-serif"
+    font-size="52"
+    font-weight="700"
+    fill="white"
+    text-anchor="middle"
+    letter-spacing="-1"
+  >AI Skills Made Simple</text>
+
+  <!-- Divider line -->
+  <rect x="540" y="408" width="120" height="2" fill="white" opacity="0.3" rx="1"/>
+
+  <!-- URL -->
+  <text
+    x="600"
+    y="468"
+    font-family="'Courier New', monospace"
+    font-size="22"
+    fill="white"
+    text-anchor="middle"
+    opacity="0.5"
+    letter-spacing="3"
+  >theaifundi.com</text>
+</svg>
