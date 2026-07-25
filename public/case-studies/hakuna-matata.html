@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Case Study: Hakuna Matata Daycare — The AI Fundi</title>
+  <meta name="description" content="How The AI Fundi built the first-ever website for a bilingual daycare in Mettmann, Germany — so parents arrive already understanding how it works." />
+  <link rel="canonical" href="https://theaifundi.com/case-studies/hakuna-matata.html" />
+  <meta property="og:title" content="Case Study: Hakuna Matata Daycare — a first website that works" />
+  <meta property="og:description" content="A bilingual daycare website that explains the concept before parents even visit." />
+  <meta property="og:image" content="https://theaifundi.com/portfolio/hakuna-matata.jpg" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root { --signal: #482d55; --void: #1A101E; --soft: #F8F6FA; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Space Grotesk', sans-serif; color: var(--void); background: #fff; line-height: 1.7; }
+    .wrap { max-width: 860px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
+    .brand { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--void); font-weight: 700; letter-spacing: -0.02em; text-transform: uppercase; margin-bottom: 3.5rem; }
+    .brand img { height: 26px; }
+    .kicker { font-family: 'Space Mono', monospace; font-size: .75rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--signal); margin-bottom: 1rem; }
+    .kicker::before { content: ""; display: inline-block; width: 26px; height: 2px; background: var(--signal); vertical-align: middle; margin-right: 10px; }
+    h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); letter-spacing: -0.03em; line-height: 1.08; margin-bottom: 1rem; }
+    h1 em { font-family: 'DM Serif Display', serif; font-style: italic; font-weight: 400; color: var(--signal); }
+    .standfirst { font-family: 'Space Mono', monospace; font-size: .95rem; color: rgba(26,16,30,.65); max-width: 620px; margin-bottom: 2.5rem; }
+    .meta { display: flex; flex-wrap: wrap; gap: 2rem; padding: 1.2rem 0; border-top: 1px solid rgba(26,16,30,.1); border-bottom: 1px solid rgba(26,16,30,.1); margin-bottom: 2.5rem; }
+    .meta div span { display: block; }
+    .meta .k { font-family: 'Space Mono', monospace; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(26,16,30,.45); margin-bottom: .2rem; }
+    .meta .v { font-weight: 600; font-size: .95rem; }
+    .meta a { color: var(--signal); }
+    .shot { border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(26,16,30,.1); box-shadow: 0 30px 70px -25px rgba(72,45,85,.3); margin-bottom: 3.5rem; }
+    .shot img { width: 100%; display: block; }
+    h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 2.8rem 0 .8rem; }
+    p { font-size: 1rem; color: rgba(26,16,30,.82); margin-bottom: 1rem; max-width: 680px; }
+    ul.feat { list-style: none; margin: 1rem 0 1.5rem; max-width: 680px; }
+    ul.feat li { padding-left: 1.6rem; position: relative; margin-bottom: .6rem; font-size: .97rem; color: rgba(26,16,30,.82); }
+    ul.feat li::before { content: "→"; position: absolute; left: 0; color: var(--signal); font-weight: 700; }
+    blockquote { border-left: 3px solid var(--signal); padding: .4rem 0 .4rem 1.4rem; margin: 2rem 0; max-width: 640px; }
+    blockquote p { font-family: 'DM Serif Display', serif; font-style: italic; font-size: 1.4rem; line-height: 1.4; color: var(--void); margin-bottom: .4rem; }
+    blockquote cite { font-family: 'Space Mono', monospace; font-size: .78rem; color: rgba(26,16,30,.5); font-style: normal; }
+    .tags { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 0; }
+    .tags span { font-family: 'Space Mono', monospace; font-size: .7rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; background: var(--soft); border: 1px solid rgba(72,45,85,.2); color: var(--signal); padding: .35rem .8rem; border-radius: 999px; }
+    .cta { background: var(--void); color: #fff; border-radius: 1.75rem; padding: 2.5rem; margin-top: 4rem; }
+    .cta h2 { margin-top: 0; color: #fff; }
+    .cta p { color: rgba(255,255,255,.75); }
+    .btn { display: inline-block; background: var(--signal); color: #fff; font-weight: 700; text-decoration: none; padding: .9rem 2rem; border-radius: 999px; margin-top: .8rem; margin-right: .8rem; }
+    .btn.ghost { background: transparent; border: 1px solid rgba(255,255,255,.3); }
+    .backrow { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; font-family: 'Space Mono', monospace; font-size: .85rem; }
+    .backrow a { color: var(--signal); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/logo.svg" alt="" />The AI Fundi</a>
+
+    <div class="kicker">Case Study — Small Business Website</div>
+    <h1>Hakuna Matata: a first website that <em>does the explaining.</em></h1>
+    <p class="standfirst">A bilingual website for a daycare in Mettmann, Germany that ran for years without one — so parents now arrive already understanding the concept.</p>
+
+    <div class="meta">
+      <div><span class="k">Client</span><span class="v">Hakuna Matata Daycare</span></div>
+      <div><span class="k">Type</span><span class="v">First-ever business website</span></div>
+      <div><span class="k">Location</span><span class="v">Mettmann, Germany</span></div>
+      <div><span class="k">Live</span><span class="v"><a href="https://hakunamatata.biz/" target="_blank" rel="noopener noreferrer">hakunamatata.biz</a></span></div>
+    </div>
+
+    <div class="shot"><img src="/portfolio/hakuna-matata.jpg" alt="Hakuna Matata Daycare website" /></div>
+
+    <h2>The problem</h2>
+    <p>The daycare had run successfully for years on reputation alone — but with no website, every prospective parent started from zero. The owner's concept, daily routines, and values had to be explained from scratch in every conversation, and families comparing childcare options online simply never found her.</p>
+
+    <h2>The build</h2>
+    <ul class="feat">
+      <li><strong>Concept-first structure</strong> — the site is built around what parents actually want to know before choosing childcare: the philosophy, the routines, the values, the practicalities.</li>
+      <li><strong>Bilingual</strong> — German and English, reflecting the daycare's international families.</li>
+      <li><strong>Built with AI tools</strong> — professional design and copy at a price a single-owner daycare can afford, delivered without the owner needing any technical involvement.</li>
+    </ul>
+
+    <blockquote>
+      <p>"Parents now come to me already understanding how I work — and that makes choosing us much easier for them."</p>
+      <cite>— Owner, Hakuna Matata Daycare</cite>
+    </blockquote>
+
+    <h2>The result</h2>
+    <p>The daycare's first-ever web presence now does the first conversation for her. Instead of explaining the basics on every phone call, the owner talks to parents who already know the concept, the routines, and the values — and are already halfway to a yes.</p>
+
+    <div class="tags">
+      <span>First Website</span><span>Bilingual DE/EN</span><span>Small Business</span><span>AI-Assisted Build</span><span>Local SEO</span>
+    </div>
+
+    <div class="cta">
+      <h2>Running a business without a website?</h2>
+      <p>You're having the same conversation over and over. A good site has it for you — and AI has made "professionally built" affordable for a business of one.</p>
+      <a class="btn" href="https://cal.com/theaifundi/intro" target="_blank" rel="noopener noreferrer">Book a free 15-min call</a>
+      <a class="btn ghost" href="https://hakunamatata.biz/" target="_blank" rel="noopener noreferrer">Visit the site</a>
+    </div>
+
+    <div class="backrow">
+      <a href="/#portfolio">&larr; All work</a>
+      <span><a href="/case-studies/kiddo.html">Next: Kiddo &rarr;</a></span>
+    </div>
+  </div>
+</body>
+</html>

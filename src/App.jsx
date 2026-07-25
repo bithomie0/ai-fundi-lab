@@ -5,8 +5,6 @@ import { ArrowRight, Terminal, Database, Activity, Cpu, Menu, X, ChevronDown } f
 const GlobalStyles = () => (
   <style dangerouslySetInnerHTML={{
     __html: `
-    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
-
     :root {
       --color-paper: #FFFFFF;
       --color-signal: #482d55;     /* Your Brand Purple */
@@ -425,12 +423,14 @@ const CalBookingSection = () => {
 
 // --- COMPONENT: Portfolio Section ---
 const PORTFOLIO_PROJECTS = [
-  { title: "Hakuna Matata Daycare", desc: "Bilingual daycare website — Mettmann, Germany", href: "https://hakunamatata.biz/", tag: "Childcare" },
-  { title: "Across the King's River", desc: "African wisdom & spiritual transformation platform", href: "https://acrossthekingsriver.com/", tag: "Community" },
-  { title: "Blooms & Botanicals", desc: "Black-owned floral design & plant styling", href: "https://bloomsbotanicals.com/", tag: "Floral Design" },
-  { title: "Delta Personal Services", desc: "Professional recruitment & personal services", href: "https://deltapersonalservice.biz/", tag: "Recruitment" },
-  { title: "Precision Fabricated Components", desc: "Custom metal fabrication — DeLand, FL", href: "https://www.precisionfabricated.com/", tag: "Manufacturing" },
-  { title: "St. Annis Baptist Church", desc: "Faith, community, and worship services", href: "https://stannispbc.net/", tag: "Church" },
+  { title: "Kiddo", desc: "AI-powered childcare documentation platform — voice to portfolio", href: "https://kiddo.now/", tag: "AI App", img: "/portfolio/kiddo.jpg", study: "/case-studies/kiddo.html" },
+  { title: "Hakuna Matata Daycare", desc: "Bilingual daycare website — Mettmann, Germany", href: "https://hakunamatata.biz/", tag: "Childcare", img: "/portfolio/hakuna-matata.jpg", study: "/case-studies/hakuna-matata.html" },
+  { title: "Across the King's River", desc: "African wisdom & spiritual transformation platform", href: "https://acrossthekingsriver.com/", tag: "Community", img: "/portfolio/kings-river.jpg" },
+  { title: "Blooms & Botanicals", desc: "Black-owned floral design & plant styling", href: "https://bloomsbotanicals.com/", tag: "Floral Design", img: "/portfolio/blooms-botanicals.jpg" },
+  { title: "Delta Personal Services", desc: "Professional recruitment & personal services", href: "https://deltapersonalservice.biz/", tag: "Recruitment", img: "/portfolio/delta-personal.jpg" },
+  { title: "Precision Fabricated Components", desc: "Custom metal fabrication — DeLand, FL", href: "https://www.precisionfabricated.com/", tag: "Manufacturing", img: "/portfolio/precision-fabricated.jpg" },
+  { title: "St. Annis Baptist Church", desc: "Faith, community, and worship services", href: "https://stannispbc.net/", tag: "Church", img: "/portfolio/st-annis.jpg" },
+  { title: "Prisms & Platters", desc: "Food, travel & lifestyle reviews — Bay Area, CA", href: "https://prismsandplatters.com/", tag: "Food & Travel", img: "/portfolio/prisms-platters.jpg", study: "/case-studies/prisms-and-platters.html" },
 ];
 
 const PortfolioSection = () => {
@@ -546,9 +546,6 @@ const PortfolioSection = () => {
     if (overlay) { overlay.style.maskImage = ''; overlay.style.webkitMaskImage = ''; }
   };
 
-  const imgUrl = (href) =>
-    `https://api.microlink.io/?url=${encodeURIComponent(href)}&screenshot=true&meta=false&embed=screenshot.url&waitForTimeout=3000&type=jpeg&quality=80`;
-
   return (
     <section id="portfolio" ref={sectionRef} className="portfolio-section py-24 md:py-32 px-8 md:px-16 border-t border-[#1A101E]/5">
       <div className="max-w-6xl mx-auto">
@@ -584,7 +581,7 @@ const PortfolioSection = () => {
                 {/* Screenshot */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
-                    src={imgUrl(project.href)}
+                    src={project.img}
                     alt={project.title}
                     className="pf-screenshot-img w-full h-[115%] object-cover object-top"
                     loading="lazy"
@@ -615,9 +612,16 @@ const PortfolioSection = () => {
                     <h3 className="font-bold text-base tracking-tight text-white mb-1 truncate">{project.title}</h3>
                     <p className="font-mono text-xs text-white/60 truncate">{project.desc}</p>
                   </div>
-                  <a href={project.href} target="_blank" rel="noopener noreferrer" className="shrink-0 font-mono text-xs font-bold text-white bg-[#482d55] hover:bg-[#5a3a6b] px-4 py-2 rounded-full transition-colors no-underline flex items-center gap-1 whitespace-nowrap">
-                    View Site <ArrowRight size={12} />
-                  </a>
+                  <div className="shrink-0 flex flex-col gap-2 items-stretch">
+                    {project.study && (
+                      <a href={project.study} className="font-mono text-xs font-bold text-white border border-white/30 hover:border-white/60 px-4 py-2 rounded-full transition-colors no-underline text-center whitespace-nowrap">
+                        Case Study
+                      </a>
+                    )}
+                    <a href={project.href} target="_blank" rel="noopener noreferrer" className="font-mono text-xs font-bold text-white bg-[#482d55] hover:bg-[#5a3a6b] px-4 py-2 rounded-full transition-colors no-underline flex items-center justify-center gap-1 whitespace-nowrap">
+                      View Site <ArrowRight size={12} />
+                    </a>
+                  </div>
                 </div>
 
                 {/* Hover hint on first card */}
@@ -640,7 +644,7 @@ const PortfolioSection = () => {
               return (
                 <div key={index} className={`mobile-card${isRevealed ? ' slide-revealed' : ''}`}>
                   <div className="portfolio-badge">0{index + 1}</div>
-                  <img src={imgUrl(project.href)} alt={project.title} className="absolute inset-0 w-full h-full object-cover object-top" loading="lazy" />
+                  <img src={project.img} alt={project.title} className="absolute inset-0 w-full h-full object-cover object-top" loading="lazy" />
                   <div className="curtain curtain-left" />
                   <div className="curtain curtain-right" />
                   <div className="mobile-card-info" style={{ opacity: isRevealed ? 0 : 1, pointerEvents: isRevealed ? 'none' : 'auto' }}>
@@ -655,7 +659,12 @@ const PortfolioSection = () => {
                         <h3 className="font-bold text-base tracking-tight text-white mb-1 truncate">{project.title}</h3>
                         <p className="font-mono text-xs text-white/60 truncate">{project.desc}</p>
                       </div>
-                      <a href={project.href} target="_blank" rel="noopener noreferrer" className="shrink-0 font-mono text-xs font-bold text-white bg-[#482d55] px-3 py-1.5 rounded-full no-underline whitespace-nowrap">Visit →</a>
+                      <div className="shrink-0 flex gap-2">
+                        {project.study && (
+                          <a href={project.study} className="font-mono text-xs font-bold text-white border border-white/30 px-3 py-1.5 rounded-full no-underline whitespace-nowrap">Story</a>
+                        )}
+                        <a href={project.href} target="_blank" rel="noopener noreferrer" className="font-mono text-xs font-bold text-white bg-[#482d55] px-3 py-1.5 rounded-full no-underline whitespace-nowrap">Visit →</a>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -698,17 +707,122 @@ const PortfolioSection = () => {
   );
 };
 
+// --- COMPONENT: Email Capture / Lead Magnet ---
+// Kit (ConvertKit) form ID — the number in the form's embed code or share URL.
+// Until it's set, the form shows a fallback message instead of submitting.
+const KIT_FORM_ID = "9726759";
+
+const EmailCaptureSection = () => {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState("idle"); // idle | sending | success | error
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!KIT_FORM_ID) { setStatus("error"); return; }
+    setStatus("sending");
+    try {
+      const data = new FormData();
+      data.append("email_address", email);
+      const res = await fetch(`https://app.kit.com/forms/${KIT_FORM_ID}/subscriptions`, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+      const json = await res.json();
+      setStatus(json.status === "success" ? "success" : "error");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <section id="free-audit" className="py-24 md:py-32 px-8 md:px-16 bg-[#482d55] relative overflow-hidden">
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-white/5 blur-[100px] rounded-full pointer-events-none"></div>
+      <div className="max-w-4xl mx-auto text-center reveal-up">
+        <h4 className="font-mono text-white/60 text-sm font-bold tracking-widest uppercase mb-4 flex items-center justify-center gap-3">
+          <span className="w-8 h-[2px] bg-white/40"></span>
+          Free Guide
+          <span className="w-8 h-[2px] bg-white/40"></span>
+        </h4>
+        <h2 className="font-bold text-4xl md:text-6xl tracking-tight text-white mb-6">
+          The 15-Minute <span className="font-drama italic font-normal">AI Audit.</span>
+        </h2>
+        <p className="font-mono text-white/80 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-10">
+          The exact checklist I use to walk through a client's business and find the hours AI can give back. Score five areas, get your number, know where to start. Free — sent straight to your inbox.
+        </p>
+
+        {status === "success" ? (
+          <div className="max-w-xl mx-auto bg-white/10 border border-white/20 rounded-2xl px-8 py-6">
+            <p className="font-bold text-white text-lg mb-1">Check your inbox 📬</p>
+            <p className="font-mono text-white/70 text-sm">The 15-Minute AI Audit is on its way. (Nothing there? Check spam and mark it safe.)</p>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="max-w-xl mx-auto flex flex-col sm:flex-row gap-3">
+            <label htmlFor="lead-email" className="sr-only">Email address</label>
+            <input
+              id="lead-email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="you@yourbusiness.com"
+              className="flex-1 px-6 py-4 rounded-full font-mono text-sm bg-white text-[#1A101E] placeholder-[#1A101E]/40 focus:outline-none focus:ring-4 focus:ring-white/30"
+            />
+            <button
+              type="submit"
+              disabled={status === "sending"}
+              className="magnetic-btn bg-[#1A101E] text-white font-bold px-8 py-4 rounded-full whitespace-nowrap disabled:opacity-60"
+            >
+              <span>{status === "sending" ? "Sending…" : "Send me the audit"}</span>
+            </button>
+          </form>
+        )}
+
+        {status === "error" && (
+          <p className="font-mono text-white/80 text-xs mt-4">
+            Hmm, that didn't go through. You can also grab it on a <a href="#book-a-call" className="underline font-bold">free call</a> — I'll send it personally.
+          </p>
+        )}
+        {status !== "success" && (
+          <p className="font-mono text-white/50 text-xs mt-6">No spam, no daily emails. Just the guide and the occasional practical AI tip. Unsubscribe anytime.</p>
+        )}
+      </div>
+    </section>
+  );
+};
+
 // --- COMPONENT: Cookie Consent Banner ---
+// Set your Google Analytics Measurement ID (e.g. "G-XXXXXXXXXX") to activate the
+// banner. While empty, no cookies are set and no banner is shown. Analytics only
+// loads after the visitor clicks Accept.
+const GA_MEASUREMENT_ID = "";
+
+const loadAnalytics = () => {
+  if (!GA_MEASUREMENT_ID || window.dataLayer) return;
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID);
+};
+
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    if (!GA_MEASUREMENT_ID) return;
     const consent = localStorage.getItem('cookie-consent');
     if (!consent) setVisible(true);
+    else if (consent === 'accepted') loadAnalytics();
   }, []);
 
   const handleAccept = () => {
     localStorage.setItem('cookie-consent', 'accepted');
+    loadAnalytics();
     setVisible(false);
   };
 
@@ -723,7 +837,7 @@ const CookieConsent = () => {
     <div className="fixed bottom-0 left-0 right-0 z-[300] p-4 md:p-6">
       <div className="max-w-4xl mx-auto bg-[#1A101E] border border-white/10 rounded-2xl px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-2xl">
         <p className="font-mono text-white/70 text-sm text-center sm:text-left leading-relaxed">
-          This site uses cookies to improve your experience.
+          This site uses analytics cookies to understand how visitors use it. See the <a href="/privacy.html" className="underline hover:text-white">privacy policy</a>.
         </p>
         <div className="flex gap-3 shrink-0">
           <button
@@ -870,11 +984,12 @@ export default function App() {
         <div className="hidden md:flex gap-6 font-mono text-sm">
           <a href="#lab" className="hover:-translate-y-[1px] transition-transform">Lab</a>
           <a href="#host" className="hover:-translate-y-[1px] transition-transform">The Fundi</a>
+          <a href="#services" className="hover:-translate-y-[1px] transition-transform">Services</a>
           <a href="#portfolio" className="hover:-translate-y-[1px] transition-transform">Portfolio</a>
-          <a href="#how-it-works" className="hover:-translate-y-[1px] transition-transform">How It Works</a>
+          <a href="#book-a-call" className="hover:-translate-y-[1px] transition-transform">Book a Call</a>
         </div>
         {/* Desktop CTA */}
-        <a href="https://www.skool.com/ai-prep-1724/about" target="_blank" rel="noopener noreferrer" className={`hidden md:inline-block px-5 py-2 rounded-full font-bold text-sm transition-transform hover:scale-105 no-underline cursor-pointer ${navScrolled ? 'bg-[#482d55] text-white' : 'bg-white text-[#482d55]'}`}>
+        <a href="https://www.skool.com/aifundi" target="_blank" rel="noopener noreferrer" className={`hidden md:inline-block px-5 py-2 rounded-full font-bold text-sm transition-transform hover:scale-105 no-underline cursor-pointer ${navScrolled ? 'bg-[#482d55] text-white' : 'bg-white text-[#482d55]'}`}>
           Join Lab
         </a>
         {/* Mobile hamburger */}
@@ -917,6 +1032,7 @@ export default function App() {
             {[
               { href: '#lab', label: 'The Lab' },
               { href: '#host', label: 'The Fundi' },
+              { href: '#services', label: 'Services' },
               { href: '#portfolio', label: 'Portfolio' },
               { href: '#how-it-works', label: 'How It Works' },
               { href: '#book-a-call', label: 'Book a Call' },
@@ -934,7 +1050,7 @@ export default function App() {
           </nav>
           <div className="px-8 pb-12">
             <a
-              href="https://www.skool.com/ai-prep-1724/about"
+              href="https://www.skool.com/aifundi"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center bg-[#482d55] text-white font-bold text-lg py-5 rounded-full no-underline hover:bg-[#5a3a6b] transition-colors"
@@ -963,19 +1079,19 @@ export default function App() {
 
         {/* Content Container with Top Margin bumper */}
         <div className="relative z-10 w-full max-w-5xl mt-16 md:mt-24">
-          <div className="flex flex-col gap-2">
-            <h1 className="reveal-up hero-reveal font-bold text-5xl md:text-7xl text-[#FFFFFF]/90 tracking-tighter uppercase" style={{ transitionDelay: '0ms' }}>
+          <h1 className="flex flex-col gap-2">
+            <span className="reveal-up hero-reveal block font-bold text-5xl md:text-7xl text-[#FFFFFF]/90 tracking-tighter uppercase" style={{ transitionDelay: '0ms' }}>
               AI Skills Made
-            </h1>
-            <h1 className="reveal-up hero-reveal font-drama italic text-7xl md:text-[12rem] leading-none text-white -mt-4 md:-mt-12 tracking-tight" style={{ transitionDelay: '100ms' }}>
+            </span>
+            <span className="reveal-up hero-reveal block font-drama italic text-7xl md:text-[12rem] leading-none text-white -mt-4 md:-mt-12 tracking-tight" style={{ transitionDelay: '100ms' }}>
               Simple.
-            </h1>
-          </div>
+            </span>
+          </h1>
           <p className="reveal-up hero-reveal font-mono text-[#FFFFFF]/80 mt-8 max-w-xl text-sm md:text-base leading-relaxed" style={{ transitionDelay: '200ms' }}>
             The AI Fundi Lab is where AI-curious professionals learn to use AI the practical way. Multiply output. Cut costs. Do more with less.
           </p>
           <div className="reveal-up hero-reveal mt-10" style={{ transitionDelay: '300ms' }}>
-            <Button primary href="https://www.skool.com/ai-prep-1724/about">Join The Lab</Button>
+            <Button primary href="https://www.skool.com/aifundi">Join The Lab</Button>
           </div>
         </div>
       </section>
@@ -1079,7 +1195,7 @@ export default function App() {
               </p>
             </div>
             <div className="mt-10">
-              <Button href="https://www.skool.com/ai-prep-1724/about">Join The Lab</Button>
+              <Button href="https://www.skool.com/aifundi">Join The Lab</Button>
             </div>
           </div>
 
@@ -1167,6 +1283,9 @@ export default function App() {
         </div>
       </section>
 
+      {/* FREE GUIDE / EMAIL CAPTURE */}
+      <EmailCaptureSection />
+
       {/* BOOK A CALL SECTION */}
       <CalBookingSection />
 
@@ -1231,7 +1350,7 @@ export default function App() {
             Not for hype. Not for developers. Built for professionals who need to do more with less right now.
           </p>
           <div className="flex justify-center">
-            <Button primary href="https://www.skool.com/ai-prep-1724/about" className="text-lg px-12 py-6">Join The Lab</Button>
+            <Button primary href="https://www.skool.com/aifundi" className="text-lg px-12 py-6">Join The Lab</Button>
           </div>
         </div>
       </section>
@@ -1250,27 +1369,32 @@ export default function App() {
             <p className="font-mono text-xs text-[#FFFFFF]/50 max-w-sm">
               Chris Conley. 18+ years global enterprise experience brought to small teams using AI. "Fundi" means master builder. Let's build.
             </p>
+            <a href="mailto:hello@theaifundi.com" className="font-mono text-xs text-[#FFFFFF]/70 hover:text-white transition-colors mt-4 inline-block">hello@theaifundi.com</a>
           </div>
           <div>
             <h4 className="font-mono text-[#482d55] text-xs font-bold mb-6 tracking-widest uppercase">Navigation</h4>
             <ul className="space-y-4 text-sm text-[#FFFFFF]/70">
               <li><a href="#lab" className="hover:text-white transition-colors">The Lab</a></li>
               <li><a href="#host" className="hover:text-white transition-colors">The Fundi</a></li>
+              <li><a href="#services" className="hover:text-white transition-colors">Services</a></li>
               <li><a href="#portfolio" className="hover:text-white transition-colors">Portfolio</a></li>
               <li><a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a></li>
+              <li><a href="#faq" className="hover:text-white transition-colors">FAQ</a></li>
+              <li><a href="#free-audit" className="hover:text-white transition-colors">Free AI Audit</a></li>
+              <li><a href="#book-a-call" className="hover:text-white transition-colors">Book a Call</a></li>
             </ul>
           </div>
           <div>
             <h4 className="font-mono text-[#482d55] text-xs font-bold mb-6 tracking-widest uppercase">Legal</h4>
             <ul className="space-y-4 text-sm text-[#FFFFFF]/70">
-              <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="/terms.html" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="/privacy.html" className="hover:text-white transition-colors">Privacy Policy</a></li>
             </ul>
           </div>
         </div>
         <div className="max-w-7xl mx-auto mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-mono text-[10px] text-[#FFFFFF]/40">© {new Date().getFullYear()} The AI Fundi Lab. All rights reserved.</p>
-          <p className="font-mono text-[10px] text-[#FFFFFF]/40">Last updated: April 2026</p>
+          <p className="font-mono text-[10px] text-[#FFFFFF]/40">Last updated: July 2026</p>
         </div>
       </footer>
     </div>

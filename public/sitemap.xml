@@ -2,7 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://theaifundi.com/</loc>
-    <lastmod>2026-04-01</lastmod>
+    <lastmod>2026-07-25</lastmod>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://theaifundi.com/case-studies/kiddo.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theaifundi.com/case-studies/prisms-and-platters.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theaifundi.com/case-studies/hakuna-matata.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://theaifundi.com/privacy.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://theaifundi.com/terms.html</loc>
+    <lastmod>2026-07-25</lastmod>
+    <priority>0.2</priority>
   </url>
 </urlset>
