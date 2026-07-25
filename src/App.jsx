@@ -981,7 +981,7 @@ export default function App() {
           <span className="font-bold tracking-tighter text-sm md:text-base uppercase">The AI Fundi</span>
         </a>
         {/* Desktop links */}
-        <div className="hidden md:flex gap-6 font-mono text-sm">
+        <div className="hidden md:flex gap-6 font-mono text-sm whitespace-nowrap">
           <a href="#lab" className="hover:-translate-y-[1px] transition-transform">Lab</a>
           <a href="#host" className="hover:-translate-y-[1px] transition-transform">The Fundi</a>
           <a href="#services" className="hover:-translate-y-[1px] transition-transform">Services</a>
@@ -989,7 +989,7 @@ export default function App() {
           <a href="#book-a-call" className="hover:-translate-y-[1px] transition-transform">Book a Call</a>
         </div>
         {/* Desktop CTA */}
-        <a href="https://www.skool.com/aifundi" target="_blank" rel="noopener noreferrer" className={`hidden md:inline-block px-5 py-2 rounded-full font-bold text-sm transition-transform hover:scale-105 no-underline cursor-pointer ${navScrolled ? 'bg-[#482d55] text-white' : 'bg-white text-[#482d55]'}`}>
+        <a href="https://www.skool.com/aifundi" target="_blank" rel="noopener noreferrer" className={`hidden md:inline-block px-5 py-2 rounded-full font-bold text-sm whitespace-nowrap transition-transform hover:scale-105 no-underline cursor-pointer ${navScrolled ? 'bg-[#482d55] text-white' : 'bg-white text-[#482d55]'}`}>
           Join Lab
         </a>
         {/* Mobile hamburger */}
