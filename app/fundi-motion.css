@@ -1,0 +1,46 @@
+/* A mesh-derived particle portrait bridges loading; no solid photograph flashes in dark mode. */
+.hero-portrait .hero-model-solid{display:none}
+.hero-portrait img{transition:opacity .35s ease}
+:root[data-theme=light] .hero-portrait .hero-model-solid{display:block}
+:root[data-theme=light] .hero-portrait .hero-particle-still{display:none}
+.hero-runway{overflow-anchor:none}
+.fundi-motion-canvas{position:fixed;inset:0;width:100vw;height:100svh;z-index:1;pointer-events:none;opacity:0;transition:opacity .35s ease}
+:root[data-fundi-motion] .hero-runway{height:300svh;min-height:0;z-index:2}
+:root[data-fundi-motion] .hero-sticky{height:100svh;min-height:0;overflow:visible}
+:root[data-fundi-motion=ready] .hero-portrait img{opacity:0}
+:root[data-fundi-motion=ready] .hero-sticky .hero-fade{will-change:opacity}
+/* A filter on body changes the containing block of fixed canvases. Filter children instead. */
+:root[data-fundi-motion=ready][data-mono=true] body{filter:none}
+:root[data-fundi-motion=ready][data-mono=true] body>*{filter:grayscale(1)}
+:root[data-motion=reduce] .fundi-motion-canvas{display:none}
+:root[data-motion=reduce] .hero-portrait img{opacity:1}
+:root[data-motion=reduce][data-fundi-motion] .hero-runway{height:100svh}
+.about-photo.about-model{aspect-ratio:1;overflow:visible;background:transparent;border:0;border-radius:0}
+.about-photo.about-model img{object-fit:contain;object-position:center;width:100%;height:100%}
+.about-photo.about-real{aspect-ratio:1130/1392;max-height:650px;overflow:visible;background:transparent;border:0;border-radius:0;mask-image:linear-gradient(to bottom,#000 89%,transparent 100%)}
+.about-photo.about-real img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+:root[data-motion=reduce]{scroll-behavior:auto}
+:root[data-motion=reduce] .device-pair,:root[data-motion=reduce] .hero-portrait img{transition:none}
+.bee-service-flight,.contact-bee-anchor{display:none;pointer-events:none}
+:root[data-fundi-motion] .services,:root[data-fundi-motion] .contact{background:transparent}
+:root[data-fundi-motion] .bee-service-flight{display:block;height:clamp(130px,13vw,190px);margin:0}
+:root[data-fundi-motion] .services .section-heading{margin-bottom:12px}
+:root[data-fundi-motion] .services .service-list{margin-top:12px}
+:root[data-fundi-motion] .contact-stage{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:4%;align-items:center}
+:root[data-fundi-motion] .contact-bee-anchor{display:block;min-height:320px;height:100%;max-height:460px}
+:root[data-motion=reduce] .bee-service-flight,:root[data-motion=reduce] .contact-bee-anchor{display:none}
+@media(max-width:900px){
+ :root[data-fundi-motion] .contact-stage{grid-template-columns:minmax(0,1fr)}
+ :root[data-fundi-motion] .contact-bee-anchor{height:180px;min-height:0;width:100%;margin-top:20px}
+ :root[data-fundi-motion] .contact .footer-bottom{margin-top:35px}
+}
+@media(max-width:640px){:root[data-fundi-motion] .bee-service-flight{height:116px}}
+@media(max-width:640px){
+ .about-photo.about-model{width:min(100%,440px);justify-self:center}
+ .about-photo.about-real{width:min(100%,360px);justify-self:center}
+}
+@media(max-height:499px){
+  .fundi-motion-canvas{display:none}
+  :root[data-fundi-motion] .hero-runway{height:auto;min-height:600px}
+  :root[data-fundi-motion=ready] .hero-portrait img{opacity:1}
+}

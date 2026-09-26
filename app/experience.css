@@ -1,0 +1,87 @@
+/* Fundi brand: the original plum on light surfaces; a legible tint on dark. */
+:root{--brand:#482d55;--brand-accent:#c9a6dd}
+:root[data-theme=light]{--brand-accent:#482d55}
+
+/* Keep elapsed time when hovering; entering empty section space does not pause. */
+.gallery-pagination button[aria-current]>span::after{animation:project-time var(--project-interval,5000ms) linear both;animation-play-state:paused}
+.work-gallery[data-rotating=true] .gallery-pagination button[aria-current]>span::after{animation:project-time var(--project-interval,5000ms) linear both;animation-play-state:running}
+.work-gallery[data-playing=false] .gallery-pagination button[aria-current]>span::after{animation:none;transform:scaleX(1)}
+
+/* One continuous page surface: close-up, whole sculpture, then copy. */
+.sculpture-runway{position:relative;height:100svh;min-height:740px;z-index:3;background:var(--background)}
+:root[data-motion=full] .sculpture-runway:not([data-static=true]){height:185svh;min-height:0}
+:root[data-motion=full] .sculpture-runway:not([data-static=true]) .sculpture-art{opacity:0;visibility:hidden}
+.sculpture-sticky{position:sticky;top:0;height:100svh;min-height:0;overflow:hidden;isolation:isolate}
+.sculpture-panel{position:absolute;inset:0;overflow:hidden;background:transparent;color:var(--foreground)}
+.sculpture-art{position:absolute;left:72%;top:50%;width:min(66svh,51vw,690px);aspect-ratio:1;transform:translate(-50%,-50%);will-change:transform}
+.sculpture-art img{width:100%;height:100%;object-fit:contain}
+.sculpture-copy{position:absolute;left:4.5vw;top:50%;max-width:33%;transform:translateY(-50%)}
+.sculpture-copy .eyebrow{color:var(--brand-accent);font-size:.75rem;letter-spacing:.1em}
+.sculpture-copy h2{font-size:clamp(42px,4.8vw,78px);line-height:1.02;letter-spacing:-.065em;font-weight:400;margin:26px 0 22px}
+.sculpture-copy p{font-size:1rem;line-height:1.6;color:var(--soft);max-width:280px;margin:0}
+.sculpture-divider{position:absolute;left:45%;top:27%;height:46%;width:1px;background:var(--line);transform-origin:50% 50%}
+
+/* Two real projects, with the correct desktop and mobile views kept together. */
+.film-runway.device-showcase{height:auto;min-height:0;padding:35px 0 36px}
+.device-showcase .film-sticky{position:relative;height:82svh;min-height:620px;max-height:850px}
+.device-showcase .film-frame{height:100%;width:100%;max-height:none;min-height:0;transform:none;border:0;border-radius:0;background:transparent;box-shadow:none}
+.device-showcase .film-over{color:var(--foreground);background:none}
+.device-showcase .film-label,.device-showcase .film-over p,.device-showcase .film-controls{color:var(--soft)}
+.device-showcase .film-controls{left:4.5vw;right:4.5vw}
+.device-showcase .film-controls button{color:var(--soft);border-color:var(--line)}
+.device-showcase .showcase-playback:hover:not(:disabled){color:var(--foreground);background:var(--secondary)}
+.device-showcase .showcase-devices{opacity:1}
+.device-pair{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .65s ease,visibility .65s ease}
+.device-pair[data-active=true]{opacity:1;visibility:visible}
+.device-showcase .phone-display{right:12%;width:min(14vw,19svh);top:30%}
+.showcase-copy{width:100%;animation:story-reveal .5s ease both}
+.showcase-client{display:block;color:var(--brand-accent);font-size:.875rem;letter-spacing:.015em;margin-top:25px}
+.device-showcase .film-over h2{margin:17px 0 19px;max-width:35%;font-size:clamp(36px,4.15vw,65px)}
+.showcase-tabs{display:flex;gap:26px;align-items:center}
+.film-controls .showcase-tabs button{width:auto;height:44px;border:0;border-radius:0;background:transparent;display:flex;gap:9px;align-items:center;font-size:.875rem;color:var(--soft);position:relative}
+.film-controls .showcase-tabs button span{font-family:ui-monospace,monospace;font-size:.75rem;opacity:.75}
+.film-controls .showcase-tabs button::after{content:'';position:absolute;left:0;right:0;bottom:3px;height:1px;background:transparent}
+.film-controls .showcase-tabs button[aria-pressed=true]{color:var(--brand-accent)}
+.film-controls .showcase-tabs button[aria-pressed=true]::after{background:var(--brand-accent)}
+.device-showcase .showcase-playback:disabled{cursor:default}
+:root[data-motion=reduce] .sculpture-runway{height:100svh;min-height:740px}
+:root[data-motion=reduce] .sculpture-sticky{position:relative;height:100%;min-height:0}
+:root[data-motion=reduce] .film-runway.device-showcase{height:auto;min-height:0}
+:root[data-motion=reduce] .showcase-copy{animation:none}
+.services{padding-top:80px}
+/* Preserve the real portrait's proportions and reserve its space before loading. */
+.about-photo{aspect-ratio:4/5}
+.about-photo img{object-position:center top}
+@media(max-width:900px){
+ .sculpture-copy h2{font-size:clamp(36px,4.8vw,50px)}
+ .sculpture-copy p{font-size:.875rem}
+ .device-showcase .film-over h2{font-size:clamp(34px,4.15vw,46px)}
+ .showcase-tabs{gap:18px}
+}
+@media(max-width:640px){
+ :root[data-motion=full] .sculpture-runway:not([data-static=true]){height:175svh}
+ .sculpture-sticky{min-height:0}
+ .sculpture-art{left:50%;top:32%;width:min(86vw,44svh);max-width:450px;transform:translate(-50%,-50%) scale(.9)}
+ .sculpture-copy{left:26px;right:26px;top:auto;bottom:12%;max-width:none;transform:none}
+ .sculpture-copy h2{font-size:clamp(40px,10.8vw,57px);margin:20px 0 17px}
+ .sculpture-copy p{font-size:.9375rem;max-width:270px}
+ .sculpture-divider{left:26px;right:26px;top:auto;bottom:44%;height:1px;width:auto}
+ .film-runway.device-showcase{padding:22px 0 32px}
+ .device-showcase .film-sticky{height:88svh;min-height:720px;max-height:820px}
+ .device-showcase .phone-display{width:min(27vw,16.5svh);top:18%;right:12%}
+ .device-showcase .film-over{padding-bottom:110px}
+ .device-showcase .film-label{font-size:.75rem}
+ .device-showcase .film-over h2{font-size:clamp(33px,9.8vw,44px);max-width:100%;margin:12px 0 14px}
+ .showcase-client{font-size:.875rem;margin-top:23px}
+ .device-showcase .film-over p{max-width:100%;font-size:1rem}
+ .showcase-tabs{gap:16px}
+ .film-controls .showcase-tabs button{font-size:.875rem;gap:6px}
+ .device-showcase .film-controls{left:26px;right:62px;bottom:34px}
+ .services{padding-top:56px}
+}
+@media(max-width:360px){
+ .film-controls .showcase-tabs button span{display:none}
+ .showcase-tabs{gap:13px}
+ .device-showcase .film-controls{left:22px;right:62px}
+ .device-showcase .film-over h2{font-size:32px}
+}
