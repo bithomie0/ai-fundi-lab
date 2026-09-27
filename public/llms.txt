@@ -1,22 +1,31 @@
 # The AI Fundi
 
-## About
-The AI Fundi is a brand founded by Chris Conley that helps AI-curious professionals and businesses learn to use AI the practical way. The AI Fundi offers education through The AI Fundi Lab (a paid community on Skool) and done-for-you services including AI-powered websites, AI workflows and automations, and AI audits.
+> Chris Conley builds websites, applications and practical AI systems for businesses. Based in Germany, serving clients worldwide.
 
 ## Founder
-Chris Conley is The AI Fundi. He brings 18+ years of global corporate business experience spanning engineering, sales, strategy, and AI. He helps small businesses, nonprofits, and professionals multiply output, cut costs, and do more with less using practical AI.
+Chris Conley is the founder of The AI Fundi and a Global AI Innovation Lead. He helps businesses turn ideas into useful digital products and explains technical decisions in plain language.
 
 ## Services
-- AI-Powered Websites: Professional websites built using AI tools — fast, affordable, and built to convert.
-- AI Workflows & Automations: Custom AI systems for businesses — from content engines to internal tools — tailored to how teams actually work.
-- AI Audits: A walkthrough of your business to identify where AI saves the most time and money, with a clear action plan.
+- Websites: Business websites, landing pages and redesigns.
+- Applications: Web applications, internal tools and customer portals.
+- AI systems: Practical automations, content workflows and integrations.
+- AI opportunity audits: Business reviews, priorities and action plans.
+
+## Selected work
+The portfolio includes Kiddo, Discovery Child Care, Greenjack Capital, MacArthur Flournoy, Dolce Flowers, Jimi Nu, Across the King’s River, Blooms & Botanicals, Hakuna Matata, Delta Personal Services, Precision Fabricated Components, St. Annis Baptist Church, and Prisms & Platters.
 
 ## Community
-The AI Fundi Lab is a paid Skool community where AI-curious professionals learn to use AI with step-by-step builds, weekly live sessions, direct support, and ready-to-use templates.
-
-## Location
-Based in Amsterdam, Netherlands. Serving clients globally.
+[The AI Fundi Lab](https://www.skool.com/aifundi) is a paid community with step-by-step builds, weekly live sessions, templates and practical AI learning.
 
 ## Contact
-Website: https://theaifundi.com
-Booking: https://cal.com/theaifundi/intro
+- [Website and portfolio](https://theaifundi.com/)
+- [Book a free 15-minute introduction](https://cal.com/theaifundi/intro)
+- Email: hello@theaifundi.com
+
+## Resources
+- [Free AI audit signup](https://theaifundi.com/#free-audit)
+- [Kiddo case study](https://theaifundi.com/case-studies/kiddo.html)
+- [Hakuna Matata case study](https://theaifundi.com/case-studies/hakuna-matata.html)
+- [Prisms & Platters case study](https://theaifundi.com/case-studies/prisms-and-platters.html)
+- [Privacy policy](https://theaifundi.com/privacy.html)
+- [Terms](https://theaifundi.com/terms.html)

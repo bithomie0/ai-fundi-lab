@@ -1,0 +1,10 @@
+{
+  "ready": true,
+  "enabled": true,
+  "reviewQuery": "motion=review",
+  "head": "/models/chris-head.glb",
+  "bee": "/models/honeybee.glb",
+  "surface": "/models/fundi-surface.bin",
+  "branch": null,
+  "note": "Approved head-to-bee experience with the six-bone bee animation. Desktop motion reviewed on 26 September 2026."
+}

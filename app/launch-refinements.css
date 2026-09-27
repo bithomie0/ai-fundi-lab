@@ -1,0 +1,61 @@
+/* The opening fits the available screen; fixed 740/760px floors were too tall. */
+.hero-runway,:root[data-motion=reduce] .hero-runway,.hero-sticky{height:100svh;min-height:0}
+.hero-sticky{overflow:visible}
+.builder-role{font-size:1rem!important;color:var(--brand-accent)!important;letter-spacing:.01em;margin:-10px 0 25px}
+.audit>div{min-width:0}
+.audit input{min-width:0;width:100%}
+@media(min-width:641px) and (max-width:1000px){.gallery-pagination button{width:22px}}
+@media(max-width:640px){.gallery-pagination{display:none}}
+
+.featured-testimonial{display:grid;grid-template-columns:1fr 2fr;gap:7%;margin:0 0 56px;padding:38px 0 42px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.featured-testimonial figcaption{padding-top:7px;font-size:1rem;line-height:1.55}
+.featured-testimonial figcaption a{display:inline-block;text-underline-offset:5px}
+.featured-testimonial figcaption a:hover{text-decoration:underline}
+.featured-testimonial figcaption span{display:block;color:var(--soft);font-size:.875rem;margin-top:10px}
+.featured-testimonial-body>blockquote{font-size:clamp(24px,2.6vw,38px);font-weight:400;letter-spacing:-.035em;line-height:1.35;margin:0;max-width:850px}
+.full-testimonial{margin-top:22px}
+.full-testimonial summary{display:flex;align-items:center;gap:16px;min-height:44px;width:fit-content;cursor:pointer;color:var(--brand-accent);font-size:.875rem;list-style:none}
+.full-testimonial summary::-webkit-details-marker{display:none}
+.full-testimonial summary::after{content:'+';font-size:21px}
+.full-testimonial[open] summary::after{content:'−'}
+.testimonial-close,.full-testimonial[open] .testimonial-read{display:none}
+.full-testimonial[open] .testimonial-close{display:inline}
+.full-testimonial blockquote{margin:14px 0 0;padding-left:22px;border-left:1px solid var(--line)}
+.full-testimonial p{font-size:1rem;color:var(--soft);line-height:1.8;letter-spacing:0;margin:0 0 17px;max-width:760px}
+.full-testimonial p:last-child{margin-bottom:0}
+
+@media(min-width:641px) and (max-height:760px){
+ .hero-portrait{height:48svh;top:38%;max-height:360px}
+ .hero-intro{top:115px}
+ .hero-bottom h1{font-size:clamp(42px,5.8vw,72px)}
+ .hero-caption{top:50%}
+ .hero-bottom{bottom:60px}
+}
+@media(max-width:640px){
+ .hero-sticky{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto;gap:12px;padding:94px 24px 54px}
+ .hero-intro{position:static;grid-row:1;grid-column:1}
+ .hero-intro p{margin:8px 0 0}
+ .hero-portrait{position:relative;grid-row:2;grid-column:1;align-self:stretch;justify-self:center;left:auto;top:auto;transform:none;width:min(84vw,340px);height:100%;min-height:0;max-height:none;aspect-ratio:auto}
+ .hero-bottom{position:static;grid-row:3;grid-column:1;min-width:0}
+ .hero-bottom h1{font-size:clamp(42px,10.6vw,56px);line-height:1.02}
+ .hero-cta{margin-top:16px;gap:14px}
+ .hero-cta p{flex:1;min-width:0;max-width:none}
+ .hero-cta .button{flex-shrink:0;white-space:nowrap}
+ .scroll-cue{bottom:17px}
+ .featured-testimonial{grid-template-columns:1fr;gap:22px;padding:26px 0 30px;margin-bottom:36px}
+ .featured-testimonial figcaption{padding-top:0}
+ .featured-testimonial figcaption span{margin-top:5px}
+ .featured-testimonial-body>blockquote{font-size:25px;line-height:1.4}
+ .full-testimonial blockquote{padding-left:16px}
+}
+/* Very short landscape windows retain readable content through normal scrolling. */
+@media(max-height:500px){
+ .hero-runway,:root[data-motion=reduce] .hero-runway,.hero-sticky{height:auto;min-height:600px}
+}
+@media(max-width:640px) and (max-height:500px){
+ .hero-sticky{grid-template-rows:auto 180px auto}
+}
+@media(max-width:360px){
+ .hero-cta{flex-direction:column;align-items:flex-start;gap:12px}
+ .hero-cta p{width:100%}
+}
